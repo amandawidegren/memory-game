@@ -1,15 +1,16 @@
 import React from 'react';
 import Card from './card'
-import Counter from './counter'
 
 class Game extends React.Component {
     
     state = {
         cards: [
-        { src: "/images/image5.jpg" },
-        { src: "/images/image4.gif" },
-        { src: "/images/image2.jpg" },
-        { src: "/images/image1.gif" }
+            { src: "/images/image5.jpg" },
+            { src: "/images/image4.gif" },
+            { src: "/images/image2.jpg" },
+            { src: "/images/image3.gif" },
+            { src: "/images/image1.gif" },
+            { src: "/images/image6.png" }
         
         ]
     }
@@ -19,14 +20,13 @@ class Game extends React.Component {
     
     render() {
         return (
-
             <div className="game" id="cardgame">
             
                 <img id="h1" src="/images/memorygamelogo.png"/>
-                <Card src={this.state.cards[0].src} />
-                <Card src={this.state.cards[1].src} />
-                <Card src={this.state.cards[2].src} />
-                <Card src={this.state.cards[3].src} />
+                {this.state.cards.map((card) => (
+                <Card src={card.src} />
+))}
+ 
             </div>
     
             
