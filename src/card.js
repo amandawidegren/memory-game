@@ -18,7 +18,7 @@ class Card extends React.Component {
     
 handleClick = () => {
     
-this.props.onClick(this.props.src)    
+this.props.onClick.key(this.props.src)    
     
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './card';
-import shuffle from 'shuffle-array'
+import shuffle from 'shuffle-array';
+import uuidv4 from 'uuid/v4'
 
 
 
@@ -26,10 +27,13 @@ class Game extends React.Component {
     
         setupGame = () => { 
         const duplicatedPhotos = photos.concat(photos)
-        const shuffledPhotos = shuffle(duplicatedPhotos) 
+        const shuffledPhotos = shuffle(duplicatedPhotos)
          return shuffledPhotos.map ((url) => ({
                 src: url, 
-                isFlipped: false 
+                isFlipped: false,
+                id: uuidv4()
+             
+            
             }))                 
         }
         
@@ -51,7 +55,11 @@ class Game extends React.Component {
             <img id="h1" src="/images/memorygamelogo.png"/>
             
             {this.state.cards.map((card) => (
-            <Card src={card.src} onClick={this.handleCardClicked}/>
+            <Card 
+                src={card.src} 
+                onClick={this.handleCardClicked} 
+                key={card.id} 
+                id={card.id} />
         )
         )
     }
