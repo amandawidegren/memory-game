@@ -10,6 +10,7 @@ import Card from './card'
             "/images/image6.png"
 
 ]
+    
 
 class Game extends React.Component {
     
@@ -21,7 +22,8 @@ class Game extends React.Component {
     }
     
         setupGame = () => {
-            return photos.map ((url) => ({
+         const duplicatedPhotos = photos.concat(photos)           
+        return duplicatedPhotos.map ((url) => ({
                 src: url, 
                 isFlipped: false 
             }))                 
