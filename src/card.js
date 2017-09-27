@@ -1,14 +1,22 @@
 import React from 'react';
 import "./card.css"
 
-const Card = (props) => (
-    <div className='card'>
-
-    <img src= {props.src} alt="" />
+class Card extends React.Component {
     
+handleClick = () => {
     
-    </div>
+alert("lklkl" + this.props.src)     
     
-)
-
+}
+    
+render() {
+        return (
+            <div className="card" onClick={this.handleClick}>
+                <img src= {this.props.src} alt="" />
+             
+               </div>
+        )
+}
+}
+    
 export default Card
