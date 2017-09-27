@@ -25,9 +25,8 @@ class Game extends React.Component {
     
         setupGame = () => { 
         const duplicatedPhotos = photos.concat(photos)
-        const collection = shuffle(duplicatedPhotos) 
-        shuffle(collection)
-         return duplicatedPhotos.map ((url) => ({
+        const shuffledPhotos = shuffle(duplicatedPhotos) 
+         return shuffledPhotos.map ((url) => ({
                 src: url, 
                 isFlipped: false 
             }))                 
