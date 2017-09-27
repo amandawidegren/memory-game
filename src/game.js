@@ -3,6 +3,7 @@ import Card from './card';
 import shuffle from 'shuffle-array'
 
 
+
     const photos = [
             "/images/image5.jpg",
             "/images/image4.gif",
@@ -31,16 +32,26 @@ class Game extends React.Component {
                 isFlipped: false 
             }))                 
         }
+        
+//New function which will take one argument, a "card src" and logs it
+        
+        handleCardClicked = (cardsrc) => {
+            alert(cardsrc)
+        }
+//Create a new instance of the Card component, With the following props.
+//src: url of the photo for the car
+//whenClicked (onClick) a callback function which the card can invoke when it is klicked
 
-
+        
     
-    render() {
+        render() {
         return (
             <div className="game" id="cardgame">
             
-                <img id="h1" src="/images/memorygamelogo.png"/>
-                {this.state.cards.map((card) => (
-                <Card src={card.src} />
+            <img id="h1" src="/images/memorygamelogo.png"/>
+            
+            {this.state.cards.map((card) => (
+            <Card src={card.src} onClick={this.handleCardClicked}/>
         )
         )
     }
@@ -50,6 +61,7 @@ class Game extends React.Component {
             
         )
     }
+    
 }
 
 

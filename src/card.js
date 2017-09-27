@@ -1,5 +1,6 @@
 import React from 'react'; //We need react to use react
-import "./card.css" // Just normal CSS, React injects it into the <head> component
+import "./card.css"; // Just normal CSS, React injects it into the <head> component
+import Game from "./game"
 
 
 //Define a "Card" component. 
@@ -11,10 +12,13 @@ class Card extends React.Component {
 //The function we call from onClick. We give it a name 'handleClick' 
 //and it takes no arguments. Because it's in a class it has access to 'this'
 //so it can use this.props.src
+
+//whenClicked (onClick) a callback function which the card can invoke when it is klicked
+//
     
 handleClick = () => {
     
-alert("ASSÅÅÅÅÅÅ" + this.props.src)     
+this.props.onClick(this.props.src)    
     
 }
 
@@ -34,8 +38,10 @@ render() { //render function definition. NOT using the flat arrow
                </div>
         )
 }
+
 }
  
 
 //to be able to use'import Card from "./card", we need to export it.
+
 export default Card
