@@ -42,6 +42,10 @@ class Game extends React.Component {
         handleCardClicked = (cardsrc) => {
             alert(cardsrc)
         }
+
+    
+            
+        
 //Create a new instance of the Card component, With the following props.
 //src: url of the photo for the car
 //whenClicked (onClick) a callback function which the card can invoke when it is klicked
@@ -50,16 +54,17 @@ class Game extends React.Component {
     
         render() {
         return (
-            <div className="game" id="cardgame">
+            <div id="cardgame">
             
-            <img id="h1" src="/images/memorygamelogo.png"/>
+            <img className="logo" src="/images/memorygamelogo.png"/>
             
             {this.state.cards.map((card) => (
             <Card 
-                src={card.src} 
-                onClick={this.handleCardClicked} 
-                key={card.id} 
-                id={card.id} />
+            src={card.src} 
+            onClick={this.handleCardClicked} 
+            key={card.id} 
+            id={card.id}
+            isFlipped={card.isFlipped}/>
         )
         )
     }

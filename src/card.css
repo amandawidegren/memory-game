@@ -1,4 +1,4 @@
-.card img {
+.card {
     width: 150px;
     float: left;
     border-color: deepskyblue;
@@ -7,6 +7,30 @@
     padding: 10px;
     margin: 10px;
       
+}
+
+
+.cardnotflipped {
+     
+    width: 150px;
+    float: left;
+    border-color: deepskyblue;
+    background-image: url("/images/cover1.gif");
+    background-size: 100%;
+    border-style: dashed;
+    padding: 10px;
+    margin: 10px;
+      
+}
+
+.cardnotflipped img {
+    visibility:hidden;
+    
+    }
+
+img {
+    width: 100%;
+    
 }
 
 #container {
@@ -22,11 +46,9 @@
     
 }
 
-#h1 {
+.logo {
     display: block;
+    width: 250px;
 
 }
 
-#body {
-    background-color: red;
-}

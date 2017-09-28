@@ -13,12 +13,18 @@ class Card extends React.Component {
 //and it takes no arguments. Because it's in a class it has access to 'this'
 //so it can use this.props.src
 
-//whenClicked (onClick) a callback function which the card can invoke when it is klicked
-//
+        getClassName = (id) => {
+            if (this.props.isFlipped === true) {
+                return ("card") }
+            
+            else {return ("cardnotflipped")}
+            
+        }
+    
     
 handleClick = () => {
     
-this.props.onClick.key(this.props.src)    
+this.props.onClick(this.props.src)    
     
 }
 
@@ -33,7 +39,7 @@ render() { //render function definition. NOT using the flat arrow
     //Props become an object so, className="foo" becones { className: "foo}
     //on this.props, and onClick becomes { onClick: () => {} }
         return ( 
-            <div className="card" onClick={this.handleClick}>
+            <div className={this.getClassName()} onClick={this.handleClick}>
                 <img src= {this.props.src} alt="" />
                </div>
         )
