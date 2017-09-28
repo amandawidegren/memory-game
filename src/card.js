@@ -12,6 +12,8 @@ class Card extends React.Component {
 //The function we call from onClick. We give it a name 'handleClick' 
 //and it takes no arguments. Because it's in a class it has access to 'this'
 //so it can use this.props.src
+    //function to return a different class name when prop 'isFlipped'
+
 
         getClassName = (id) => {
             if (this.props.isFlipped === true) {
@@ -24,7 +26,7 @@ class Card extends React.Component {
     
 handleClick = () => {
     
-this.props.onClick(this.props.src)    
+this.props.onClick(this.props.id)    
     
 }
 
