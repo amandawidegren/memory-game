@@ -22,6 +22,7 @@ class Game extends React.Component {
             super(props)
             this.state = {
             cards: this.setupGame()
+                
         }                
     }
     
@@ -31,6 +32,7 @@ class Game extends React.Component {
             return shuffledPhotos.map ((url) => ({
                 src: url, 
                 isFlipped: false,
+                isMatched: false,
                 id: uuidv4()
              
             
@@ -52,7 +54,7 @@ class Game extends React.Component {
                if (cardz.id === clickedCardId) {
                  cardz.isFlipped = true   
                }
-               return cardz
+                return cardz
            })
         
            this.setState({ cards: newCardsState}, this.checkIfCardsMatched)
@@ -63,21 +65,39 @@ class Game extends React.Component {
         
         
         checkIfCardsMatched = () => {
-            const flippedCards = this.state.cards.filter((image) => {
+                  
+            const flippedCards = 
+                  this.state.cards.filter((image) => {
                 return image.isFlipped
-            })
+                }
+            )
             
             
             if (flippedCards.length === 2) {
                 setTimeout(() => {
-                    const newCardsState = this.state.cards.map((image) => {
-                    image.isFlipped = false
-                    return image
-                })
-                
-                this.setState({ cards: newCardsState })
-            }, 400)
-        }
+          
+                    if (flippedCards[0].src === flippedCards[1].src){
+                        const newCardsStateMatch = this.state.cards.map((image) => {
+                            if (flippedCards.includes(image)) {
+                                image.isMatched = true
+                                }
+                            image.isFlipped = false
+                            return image 
+                        })
+            
+                        this.setState({ cards: newCardsStateMatch })
+                    }
+                    
+                    else {
+                        const newCardsState = this.state.cards.map((image) => {
+                            image.isFlipped = false 
+                            return image
+                        })
+                        this.setState({ cards: newCardsState })
+                    }
+            
+                }, 400)
+            }
 
     }
 
@@ -101,6 +121,7 @@ class Game extends React.Component {
                 key={card.id} 
                 id={card.id}
                 isFlipped={card.isFlipped}
+                isMatched={card.isMatched}
                 checkIfCardsMatched={card.filteredCards}/>
                 )
             )

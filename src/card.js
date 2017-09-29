@@ -13,13 +13,17 @@ class Card extends React.Component {
 //and it takes no arguments. Because it's in a class it has access to 'this'
 //so it can use this.props.src
     //function to return a different class name when prop 'isFlipped'
-
+    //is true or false. It needs to return the
 
         getClassName = (id) => {
             if (this.props.isFlipped === true) {
                 return ("card") }
             
-            else {return ("cardnotflipped")}
+            else if (this.props.isMatched === true){
+                return ("match")
+            }
+            
+            else {return ("cardnotflipped") }
             
         }
     

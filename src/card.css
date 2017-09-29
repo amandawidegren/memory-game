@@ -9,6 +9,17 @@
       
 }
 
+.match {
+    visibility: hidden;
+    width: 150px;
+    float: left;
+    border-color: deepskyblue;
+    border-style: dashed;
+    padding: 10px;
+    margin: 10px;
+      
+}
+
 
 .cardnotflipped {
      
