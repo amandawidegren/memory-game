@@ -8,7 +8,7 @@ import SuccessMessage from './SuccessMessage'
 
     const photos = [
             "/images/image5.jpg",
-           /* "/images/image4.gif",
+            /*"/images/image4.gif",
             "/images/image2.jpg",
             "/images/image3.gif",
             "/images/image1.gif",
@@ -39,6 +39,13 @@ class Game extends React.Component {
             
             }))                 
         }
+        
+        resetGame = () => {
+            this.setState(
+                {cards: this.setupGame()})
+        }
+    
+        
         
 //This function will be called from the card component
         //ecause we have passed it as a prop (called onClick) when
@@ -130,7 +137,7 @@ class Game extends React.Component {
             
             <img className="logo" src="/images/memorygamelogo.png"/> 
                 
-            {this.ifGameIsFinished() && <SuccessMessage />}
+            {this.ifGameIsFinished() && <SuccessMessage resetGame={this.resetGame} />}
             
             {this.state.cards.map((card) => (
                 <Card 

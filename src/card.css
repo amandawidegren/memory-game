@@ -1,3 +1,22 @@
+.resetbtn {
+    width: 151px;
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;    
+}
+
+.resetbtn:hover {
+    background-image: url("/images/restartbuttonhover.jpg") no-repeat;
+    width: 151px;
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;   
+}
+
 .card {
     width: 150px;
     float: left;
@@ -68,5 +87,10 @@ img {
     padding-left: 20px;
     padding-right: 20px;
     display: block;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
+
 
