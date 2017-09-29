@@ -8,7 +8,7 @@ class SuccessMessage extends React.Component {
      return ( 
 <div>
      <img className="amazing" src="/images/amazing4.gif"/>
-     <img className="resetbtn" src="/images/restartbutton.jpg" onClick={this.props.resetGame}/>  
+   <img className="resetbtn" src="/images/restartbutton.jpg" onClick={this.props.resetGame}/>  
          </div>
      )    
     }

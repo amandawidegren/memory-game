@@ -8,11 +8,11 @@ import SuccessMessage from './SuccessMessage'
 
     const photos = [
             "/images/image5.jpg",
-            /*"/images/image4.gif",
+            "/images/image4.jpg",
             "/images/image2.jpg",
             "/images/image3.gif",
-            "/images/image1.gif",
-            "/images/image6.png"*/
+            "/images/image1.jpg",
+            "/images/image6.png"
 
 ]
     
