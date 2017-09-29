@@ -2,16 +2,17 @@ import React from 'react';
 import Card from './card';
 import shuffle from 'shuffle-array';
 import uuidv4 from 'uuid/v4'
+import SuccessMessage from './SuccessMessage'
 
 
 
     const photos = [
             "/images/image5.jpg",
-            "/images/image4.gif",
+           /* "/images/image4.gif",
             "/images/image2.jpg",
             "/images/image3.gif",
             "/images/image1.gif",
-            "/images/image6.png"
+            "/images/image6.png"*/
 
 ]
     
@@ -101,6 +102,20 @@ class Game extends React.Component {
 
     }
 
+        
+        ifGameIsFinished = () => {
+                  
+            const matchedCards = 
+            this.state.cards.filter((image) => {
+                return image.isMatched
+                    }
+            ) 
+            
+            return (matchedCards.length === this.state.cards.length)
+        }
+
+    
+
             
         
 //Create a new instance of the Card component, With the following props.
@@ -109,10 +124,13 @@ class Game extends React.Component {
         
     
         render() {
-        return (
+            
+         return (
             <div id="cardgame">
             
-            <img className="logo" src="/images/memorygamelogo.png"/>
+            <img className="logo" src="/images/memorygamelogo.png"/> 
+                
+            {this.ifGameIsFinished() && <SuccessMessage />}
             
             {this.state.cards.map((card) => (
                 <Card 
